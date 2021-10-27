@@ -1,0 +1,30 @@
+<!doctype html>
+<!--
+
+index.html - simple python transpile-to-javascript experiment
+
+Setup:
+
+$ pip3 install transcrypt
+$ http-server . --port 8080 -a 0.0.0.0 --ext html --no-dotfiles -c-1
+$ python3 -m transcrypt -b -m -n python-experiment.py
+
+-->
+<html>
+	<head>
+		<title>Python-to-Javascript Experiment</title>
+		<script src="https://pixijs.download/release/pixi.js"></script>
+	</head>
+	<body>
+		<h1>Python-to-Javascript Experiment</h1>
+		<p>Transcrypt (TM) Python to JavaScript Small Sane Subset Transpiler Version 3.9.0</p>
+<script type="module">
+
+import * as python from './__target__/python-experiment.js'
+window.python = python;
+</script>
+		<div id="test">...</div>
+		<button onclick="python.engine.test()">Test: Manip DOM</button>
+		<button onclick="python.engine.setDisplayText('this is a test')">Test: Set PixiJS Text</button>
+	</body>
+</html>

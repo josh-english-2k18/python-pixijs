@@ -1,0 +1,29 @@
+<!doctype html>
+<!--
+
+demo.html - simple python transpile-to-javascript experiment
+
+Compiler command:
+
+$ python3 -m transcrypt -b -m -n demo.py
+
+Link: http://0.0.0.0:8080/demo.html
+
+-->
+<html>
+	<head>
+		<title>Python-to-Javascript Experiment (Demo)</title>
+	</head>
+	<body>
+		<h1>Python-to-Javascript Experiment (Demo)</h1>
+		<script type="module">import * as demo from './__target__/demo.js'; window.demo = demo;</script>
+		<h2>Python Transpiler Demo</h2>
+		<p>
+		<div id = "greet">...</div>
+		<button onclick="demo.solarSystem.greet()">Click me repeatedly!</button>
+		<p>
+		<div id = "explain">...</div>
+		<button onclick="demo.solarSystem.explain()">And click me repeatedly too!</button>
+
+	</body>
+</html>
